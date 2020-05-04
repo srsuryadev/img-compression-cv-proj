@@ -3,8 +3,7 @@ Our objective is to achieve higher compression in images by retaining only the e
     * Depth map based JPEG encoder (d-JPEG)
     * Image Compression for VGG16 (VGG-Compression)
 
-**Depth map based JPEG encoder (d-JPEG)**
-
+# Depth map based JPEG encoder (d-JPEG)**
 
 
 In the work by Prakash et al. \cite{prakash2017semantic}, they encode semantically-salient regions of the image with higher quality than the other regions. We try to extend this idea by using depth estimate map of the image. We use Dense depth \cite{alhashim2018high} to get the depth map to encode the regions that are closer to the camera with higher quality than the regions that are far away. The intuition for this approach is that the regions that are closer to the camera are likely to be more important for the end object detection system than the regions that are far away.
@@ -19,6 +18,9 @@ The key contribution of this approach from us are,
 * Use of depth map to do non uniform image compression on the image.
 * Median filter on the depth map and using it along with the existing percentile based multi-level thresholding to create regions in the depth map.
 * Doing the compression to the extent in which the important information near to the camera like text or numbers are still recognizable by the computer vision system.
+
+
+
 
 
 
