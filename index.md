@@ -6,7 +6,7 @@ Our objective is to achieve higher compression in images by retaining only the e
 # Depth map based JPEG encoder (d-JPEG)
 
 
-In the work by Prakash et al. \cite{prakash2017semantic}, they encode semantically-salient regions of the image with higher quality than the other regions. We try to extend this idea by using depth estimate map of the image. We use Dense depth \cite{alhashim2018high} to get the depth map to encode the regions that are closer to the camera with higher quality than the regions that are far away. The intuition for this approach is that the regions that are closer to the camera are likely to be more important for the end object detection system than the regions that are far away.
+In the work Semantic Perceptual Image Compression using Deep Convolution Networks (DCC, 2017), they encode semantically-salient regions of the image with higher quality than the other regions. We try to extend this idea by using depth estimate map of the image. We use Dense depth \cite{alhashim2018high} to get the depth map to encode the regions that are closer to the camera with higher quality than the regions that are far away. The intuition for this approach is that the regions that are closer to the camera are likely to be more important for the end object detection system than the regions that are far away.
 
 
 
@@ -25,7 +25,8 @@ The key contribution of this approach are,
 
 
 ### Depth Estimator
-We used the depth-estimator code \footnote{https://github.com/ialhashim/DenseDepth} and model from \cite{alhashim2018high} to generate a depth map for the given input image. It uses convolutional neural network (CNN) for computing a high-resolution depth map and the model that we used was trained using NYU Depth v2 dataset.
+We used the dense depth from High Quality Monocular Depth Estimation via Transfer Learning  - 2018
+ and model trained on NYU Depth v2 dataset to generate a depth map for the given input image. It uses convolutional neural network (CNN) for computing a high-resolution depth map and the model that we used was trained using NYU Depth v2 dataset.
 
 The input for the module is the original image and the output from this module is the depth map of the image in gray-scale.
 
@@ -34,11 +35,9 @@ The input for the module is the original image and the output from this module i
 Before using the depth map for the image compression, we wrote an additional layer to smoothen the depth map using the median filter. This is used so that map has proper regions of varying depth, and it useful so that for these individual regions a uniform compression can be used.
 
 
-For the following sections 2.3.3 and 2.3.4, we used the combiner code from \cite{prakash2017semantic} \footnote{https://github.com/iamaaditya/image-compression-cnn} with minor modifications.
-
-
 ### Image Combiner
-The image combiner uses the list of compressed images with varied compression ratio to use that as  segment for various regions in the depth map.
+
+We reused the image combiner module from  Semantic Perceptual Image Compression using Deep Convolution Networks (DCC, 2017) with minor modification. The image combiner uses the list of compressed images with varied compression ratio to use that as  segment for various regions in the depth map.
 
 We have tweaked the existing model based on percentile based multi-level threshold in the combiner for our needs to identify the segments in the depth and use the corresponding compressed image segment. 
 
