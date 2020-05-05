@@ -20,7 +20,7 @@ The key contribution of this approach are,
 * Doing the compression to the extent in which the important information near to the camera like text or numbers are still recognizable by the computer vision system.
 
 
-## Design
+## Design (Depth based approach)
 <img width="331" alt="Screenshot 2020-05-04 at 16 21 04" src="https://user-images.githubusercontent.com/6566518/81014906-576d4580-8e23-11ea-8022-d61eecd1cbfb.png">
 
 
@@ -44,17 +44,25 @@ We have tweaked the existing model based on percentile based multi-level thresho
 
 ## Evaluation for depth based compression (d-JPEG)
 
+* Dataset - Street View Text (SVT) extracted from Google Street View 
+350 images (images containing text in it). Text is one of the finer and important detail  that can be present in the image. Our compression method should not lose this information.
+
+* Computer Vision System - EAST (An Efficient Accurate Scene Text Detector - CVPR ‘17) 
+
+
 This table shows the file size savings got from the d-JPEG compression,
-| MIN  | MAX | AVG |
-| ----- | -- | -- |
-| 3.05%  | 27.57% | 14.59% |
+
+<table>
+<tr><th> MIN</th><th> MAX </th><th> AVG </th></tr>
+   <tr><td>3.05%</td><td> 27.57% </td><td> 14.59% </td></tr>
+   </table>
 
 The average file size savings of **14.59%**.
 
 This table shows the accuracy based on the EAST's text detection on d-JPEG compression,
-| Metric | Value |
-| ----- | -- |
-| Accuracy  | 84.28% |
+<table>
+  <tr><th> Metric </th> <th> Value </th> </tr>
+<tr><td> Accuracy  </td><td> 84.28% </td></tr>
 
 
 
