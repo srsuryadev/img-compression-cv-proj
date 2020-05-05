@@ -1,0 +1,140 @@
+Files already downloaded and verified
+encoder.py:108: UserWarning: volatile was removed and now has no effect. Use `with torch.no_grad():` instead.
+  torch.zeros(image.size(0), 256, height // 4, width // 4), volatile=True),
+encoder.py:111: UserWarning: volatile was removed and now has no effect. Use `with torch.no_grad():` instead.
+  volatile=True))
+encoder.py:113: UserWarning: volatile was removed and now has no effect. Use `with torch.no_grad():` instead.
+  torch.zeros(image.size(0), 512, height // 8, width // 8), volatile=True),
+encoder.py:116: UserWarning: volatile was removed and now has no effect. Use `with torch.no_grad():` instead.
+  volatile=True))
+encoder.py:118: UserWarning: volatile was removed and now has no effect. Use `with torch.no_grad():` instead.
+  torch.zeros(image.size(0), 512, height // 16, width // 16), volatile=True),
+encoder.py:121: UserWarning: volatile was removed and now has no effect. Use `with torch.no_grad():` instead.
+  volatile=True))
+encoder.py:124: UserWarning: volatile was removed and now has no effect. Use `with torch.no_grad():` instead.
+  torch.zeros(image.size(0), 512, height // 16, width // 16), volatile=True),
+encoder.py:127: UserWarning: volatile was removed and now has no effect. Use `with torch.no_grad():` instead.
+  volatile=True))
+encoder.py:129: UserWarning: volatile was removed and now has no effect. Use `with torch.no_grad():` instead.
+  torch.zeros(image.size(0), 512, height // 8, width // 8), volatile=True),
+encoder.py:132: UserWarning: volatile was removed and now has no effect. Use `with torch.no_grad():` instead.
+  volatile=True))
+encoder.py:134: UserWarning: volatile was removed and now has no effect. Use `with torch.no_grad():` instead.
+  torch.zeros(image.size(0), 256, height // 4, width // 4), volatile=True),
+encoder.py:137: UserWarning: volatile was removed and now has no effect. Use `with torch.no_grad():` instead.
+  volatile=True))
+encoder.py:139: UserWarning: volatile was removed and now has no effect. Use `with torch.no_grad():` instead.
+  torch.zeros(image.size(0), 128, height // 2, width // 2), volatile=True),
+encoder.py:142: UserWarning: volatile was removed and now has no effect. Use `with torch.no_grad():` instead.
+  volatile=True))
+/users/sri/.local/lib/python3.5/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/users/sri/.local/lib/python3.5/site-packages/torch/nn/functional.py:1340: UserWarning: nn.functional.tanh is deprecated. Use torch.tanh instead.
+  warnings.warn("nn.functional.tanh is deprecated. Use torch.tanh instead.")
+Iter: 00; Loss: 0.215189
+200
+Iter: 00; Loss: 0.216841
+400
+Iter: 00; Loss: 0.205089
+600
+Iter: 00; Loss: 0.209251
+800
+Iter: 00; Loss: 0.211655
+1000
+Iter: 00; Loss: 0.213306
+1200
+Iter: 00; Loss: 0.209545
+1400
+Iter: 00; Loss: 0.209155
+1600
+Iter: 00; Loss: 0.211910
+1800
+Iter: 00; Loss: 0.213121
+2000
+Iter: 00; Loss: 0.209594
+2200
+Iter: 00; Loss: 0.209303
+2400
+Iter: 00; Loss: 0.207742
+2600
+Iter: 00; Loss: 0.215124
+2800
+Iter: 00; Loss: 0.210216
+3000
+Iter: 00; Loss: 0.207972
+3200
+Iter: 00; Loss: 0.209083
+3400
+Iter: 00; Loss: 0.208261
+3600
+Iter: 00; Loss: 0.211359
+3800
+Iter: 00; Loss: 0.205590
+4000
+Iter: 00; Loss: 0.212794
+4200
+Iter: 00; Loss: 0.209963
+4400
+Iter: 00; Loss: 0.219029
+4600
+Iter: 00; Loss: 0.207616
+4800
+Iter: 00; Loss: 0.214411
+5000
+Iter: 00; Loss: 0.204897
+5200
+Iter: 00; Loss: 0.218117
+5400
+Iter: 00; Loss: 0.214214
+5600
+Iter: 00; Loss: 0.210414
+5800
+Iter: 00; Loss: 0.209938
+6000
+Iter: 00; Loss: 0.212705
+6200
+Iter: 00; Loss: 0.209022
+6400
+Iter: 00; Loss: 0.215113
+6600
+Iter: 00; Loss: 0.208921
+6800
+Iter: 00; Loss: 0.209590
+7000
+Iter: 00; Loss: 0.213120
+7200
+Iter: 00; Loss: 0.205715
+7400
+Iter: 00; Loss: 0.210561
+7600
+Iter: 00; Loss: 0.208216
+7800
+Iter: 00; Loss: 0.205026
+8000
+Iter: 00; Loss: 0.210259
+8200
+Iter: 00; Loss: 0.213328
+8400
+Iter: 00; Loss: 0.215887
+8600
+Iter: 00; Loss: 0.208339
+8800
+Iter: 00; Loss: 0.215839
+9000
+Iter: 00; Loss: 0.206061
+9200
+Iter: 00; Loss: 0.216554
+9400
+Iter: 00; Loss: 0.215265
+9600
+Iter: 00; Loss: 0.214387
+9800
+Iter: 00; Loss: 0.216267
+10000
+Statistics
+Accuracy after compression
+9428.0
+Accuracy of inception
+17996.0
+Accuracy of Compression and Inception
+9444.0
