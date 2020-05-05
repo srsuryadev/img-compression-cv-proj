@@ -83,7 +83,7 @@ This table shows the accuracy based on the EAST's text detection on d-JPEG compr
   
   </tr>
  </table>
- 
+ <br><br>
  The figures shown in the above table contains the image with maximum savings of 27.57%.
  As you could see from the above table, the EAST is able to detect the text in the compressed image in the same way as the original image. 
 
