@@ -48,7 +48,7 @@ We have tweaked the existing model based on percentile based multi-level thresho
 * **Computer Vision System - EAST (An Efficient Accurate Scene Text Detector - CVPR ‘17)**
 
 
-This table shows the file size savings got from the d-JPEG compression,
+This table shows the **file size savings got from the d-JPEG compression**,
 
 <table>
 <tr><th> MIN</th><th> MAX </th><th> AVG </th></tr>
