@@ -72,10 +72,10 @@ This table shows the accuracy based on the EAST's text detection on d-JPEG compr
 
 <div class="row">
   <div class="column">
-    <img src="https://user-images.githubusercontent.com/6566518/81014677-e9c11980-8e22-11ea-88c4-5737ba195474.png" alt="Snow" style="width:100%">
+    <img src="https://user-images.githubusercontent.com/6566518/81014677-e9c11980-8e22-11ea-88c4-5737ba195474.png" alt="Snow" style="width:50%">
   </div>
   <div class="column">
-    <img src="https://user-images.githubusercontent.com/6566518/81014681-ef1e6400-8e22-11ea-9774-8a3f8e39e7f7.png" alt="Forest" style="width:100%">
+    <img src="https://user-images.githubusercontent.com/6566518/81014681-ef1e6400-8e22-11ea-9774-8a3f8e39e7f7.png" alt="Forest" style="width:50%">
   </div>
 
 </div>
