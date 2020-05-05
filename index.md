@@ -52,9 +52,9 @@ We have tweaked the existing model based on percentile based multi-level thresho
 ## Evaluation for depth based compression (d-JPEG)
 
 * **Dataset - <a href="http://vision.ucsd.edu/~kai/svt/ ">Street View Text (SVT)</a> extracted from Google Street View (350 images)** 
-350 images (images containing text in it). Text is one of the finer and important detail  that can be present in the image. Our compression method should not lose this information.
+350 images. Text is one of the finer and important detail  that can be present in the image. Our compression method should not lose this information.
 
-* Computer Vision System - EAST (An Efficient Accurate Scene Text Detector - CVPR ‘17) 
+* **Computer Vision System - EAST (An Efficient Accurate Scene Text Detector - CVPR ‘17)**
 
 
 This table shows the file size savings got from the d-JPEG compression,
@@ -68,24 +68,15 @@ The average file size savings of **14.59%**.
 
 **We measured the accuracy by comparing the number of rectangles around the text the EAST is able to annotate both on the original and the compressed image.**
 
+<br><br>
+
 This table shows the accuracy based on the EAST's text detection on d-JPEG compression,
-
-
 
 <table>
   <tr><th> Metric </th> <th> Value </th> </tr>
 <tr><td> Accuracy  </td><td> 84.28% </td></tr>
 </table>
 
-<div class="row">
-  <span class="column">
-    <img src="https://user-images.githubusercontent.com/6566518/81014677-e9c11980-8e22-11ea-88c4-5737ba195474.png" alt="Snow" style="width:50%">
-  </span>
-  <span class="column">
-    <img src="https://user-images.githubusercontent.com/6566518/81014681-ef1e6400-8e22-11ea-9774-8a3f8e39e7f7.png" alt="Forest" style="width:50%">
-  </span>
-
-</div>
 
 | Compressed Image  |Original Image   |
 |-------------------|-----------------|
@@ -93,8 +84,8 @@ This table shows the accuracy based on the EAST's text detection on d-JPEG compr
 
 
 
- The figures shown in the above table contains the image with maximum savings of 27.57%.
- As you could see from the above table, the EAST is able to detect the text in the compressed image in the same way as the original image. 
+ The figures shown in the above table contains the image with maximum savings of **27.57%.**
+ As you could see from the above table, the EAST is able to detect the text in the compressed image in the same way as the original image. You can find the list input original and output compressed images we used for testing <a href="https://github.com/srsuryadev/img-compression-cv-proj/tree/master/depth-based-compression/output">here</a>.
 
 
 
