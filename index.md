@@ -59,6 +59,8 @@ This table shows the file size savings got from the d-JPEG compression,
 
 The average file size savings of **14.59%**.
 
+**We measured the accuracy by comparing the number of rectangles around the text the EAST is able to annotate both on the original and the compressed image.**
+
 This table shows the accuracy based on the EAST's text detection on d-JPEG compression,
 <table>
   <tr><th> Metric </th> <th> Value </th> </tr>
@@ -69,23 +71,21 @@ This table shows the accuracy based on the EAST's text detection on d-JPEG compr
 
 <table>
   <tr>
-    <td>File Size reduction: 27.57% (Max)
-
-Original File Size: 30 KB
-Compressed File Size: 21.7 KB
+    <td>Compressed Image
 </td>
-    <td>File Size reduction: 3.05% (Min)
-Original File Size:  19 KB
-Compressed File Size: 18 KB
+    <td>Original Image
 </td>
   </tr>
   <tr>
-    <td><img src="https://user-images.githubusercontent.com/6566518/81014677-e9c11980-8e22-11ea-88c4-5737ba195474.png" width=370 height=370></td>
-    <td><img src="https://user-images.githubusercontent.com/6566518/81014681-ef1e6400-8e22-11ea-9774-8a3f8e39e7f7.png" width=370 height=370></td>
+   <td>
+    <img src="https://user-images.githubusercontent.com/6566518/81014677-e9c11980-8e22-11ea-88c4-5737ba195474.png" width=370 height=370></img> </td> <td>
+    <img src="https://user-images.githubusercontent.com/6566518/81014681-ef1e6400-8e22-11ea-9774-8a3f8e39e7f7.png" width=370 height=370></img></td>
   
   </tr>
  </table>
  
+ The figures shown in the above table contains the image with maximum savings of 27.57%.
+ As you could see from the above table, the EAST is able to detect the text in the compressed image in the same way as the original image. 
 
 
 
