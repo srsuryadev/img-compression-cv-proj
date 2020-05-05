@@ -77,6 +77,8 @@ This table shows the accuracy based on the EAST's text detection on d-JPEG compr
 <tr><td> Accuracy  </td><td> 84.28% </td></tr>
 </table>
 
+<br><br>
+EAST's text detection on both the compressed and original image
 
 | Compressed Image  |Original Image   |
 |-------------------|-----------------|
