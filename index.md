@@ -89,8 +89,54 @@ This table shows the accuracy based on the EAST's text detection on d-JPEG compr
 
 
 
+# Image Compression for Object Detection
+
+In this approach, we take a computer vision system and learn an image compression encoding/decoding specific to it. For instance, given a computer vision system like Inception v3 (a state of the art object detection neural network), the modified image compression scheme should produce a compressed image that is sufficient enough for the Inception v3 to detect objects.
+
+To achieve this we need a better Encoding/Decoding scheme than JPEG. We propose a way to learn a encoding/decoding scheme for a specific computer vision system. Here, we train an encoding/decoding scheme for Inception v3 using neural network proposed in Full Resolution Image Compression by Toderici et. al.
+
+## Full Resolution Image Compression
+
+![FRIC Arch](object-detection-compression/images/fric.png)
+
+The network has three components -
+
+1. Encoder - Takes the RGB image as input and produces an encoded version of it.
+2. Binarizer - Takes the encoded image as input and produces the compressed version of the image. The output size of Binarizer determines the compressed image size.
+3. Decoder - Taes the compressed image and reconstructs the original image while retaining the important features.
 
 
+## Design
+
+![Arch](object-detection-compression/images/arch.png)
+
+The image shows a high level design of the system. We use [CIFAR-10 Dataset](http://www.cs.toronto.edu/~kriz/cifar.html) to train the network. The images of batch size 200 go through the FRIC network that compresses and reconstructs the image. The reconstructed image is fed into the trained inception v3 network that predicts the class label for the image. Using the predicted class label and the ground truth label we get the cross entropy loss. We use the gradient of cross entropy loss and backpropagation to update the parameters of FRIC network. During backpropagation the parameters of Inception v3 are not updated.
 
 
+## Dataset
+
+We used [CIFAR-10 Dataset](http://www.cs.toronto.edu/~kriz/cifar.html) that contains 50,000 training images of size 32x32 and from 10 object classes. During training we used a batch size of 200 and a learning rate of 5e-5. FRIC network was originally designed to take 32x32 images as input and that is why we chose this dataset. Our trained inception v3 model achieves a test set accuracy of about 90% for this dataset.
+
+
+## Training Curve
+
+![Train](object-detection-compression/images/train_loss_comp_rate.png)
+
+We have plotted training loss vs iterations for three trained models with varying compression rate. Compression rate is controlled by the output size from the Binarizer of FRIC network. The three curves corresponds to a particular compression rate. Higher the compression rate the higher is the loss during training. This suggests a trade off between accuracy and the compression rate.
+
+
+## Results
+
+![results](object-detection-compression/images/result.png)
+
+The output of this compression scheme that was leanrt using an object detection system need not be visually perceivable by humans. The object detection system retains the important abstract features that are need for object classification and remove unwanted details so that we can achieve a high compression rate.
+
+In the above image we can see that all the images look like gray tiles. For humans, the images may look random and meaningless while for an object detection network like Inception v3 it is easy to classify them info the corresponding obejct classes.
+
+
+## Evaluation
+
+![Accuracy vs Compression Rate](object-detection-compression/images/accuracy_vs_rate.png)
+
+This is a plot showing how compression rate affects accuracy of prediction. The total size of the test data is 26 MB and the Inception v3 model classifies objects with 90% accuracy. When we tune the compression rate to 46.2% we see that the accuracy drops to 52% and when the compression rate is pushed to 86.2% we see that the accuracy further drops to 43% which is still a lot better than a random object classifier that would have an accuracy of 10%.
 
