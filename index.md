@@ -101,7 +101,7 @@ To achieve this we need a better Encoding/Decoding scheme than JPEG. We propose 
 
 ![FRIC Arch](object-detection-compression/images/fric.png)
 
-The network has three components -
+The network proposed by [Toderici et. al.](https://arxiv.org/abs/1608.05148) has three components -
 
 1. Encoder - Takes the RGB image as input and produces an encoded version of it.
 2. Binarizer - Takes the encoded image as input and produces the compressed version of the image. The output size of Binarizer determines the compressed image size.
@@ -117,7 +117,7 @@ The image shows a high level design of the system. We use [CIFAR-10 Dataset](htt
 
 ## Dataset
 
-We used [CIFAR-10 Dataset](http://www.cs.toronto.edu/~kriz/cifar.html) that contains 50,000 training images of size 32x32 and from 10 object classes. During training we used a batch size of 200 and a learning rate of 5e-5. FRIC network was originally designed to take 32x32 images as input and that is why we chose this dataset. Our trained inception v3 model achieves a test set accuracy of about 90% for this dataset.
+We used [CIFAR-10 Dataset](http://www.cs.toronto.edu/~kriz/cifar.html) that contains 50,000 training images of size 32x32 and from 10 object classes. During training we used a batch size of 200 and a learning rate of 5e-5. FRIC network was originally designed to take 32x32 images as input and that is why we chose this dataset. Our trained inception v3 model achieves a test set accuracy of about **90%** for this dataset.
 
 
 ## Training Curve
@@ -140,5 +140,19 @@ In the above image we can see that all the images look like gray tiles. For huma
 
 ![Accuracy vs Compression Rate](object-detection-compression/images/accuracy_vs_rate.png)
 
-This is a plot showing how compression rate affects accuracy of prediction. The total size of the test data is 26 MB and the Inception v3 model classifies objects with 90% accuracy. When we tune the compression rate to 46.2% we see that the accuracy drops to 52% and when the compression rate is pushed to 86.2% we see that the accuracy further drops to 43% which is still a lot better than a random object classifier that would have an accuracy of 10%.
+This is a plot showing how compression rate affects accuracy of prediction. The total size of the test data is **26 MB** and the Inception v3 model classifies objects with 90% accuracy. When we tune the compression rate to **46.2%** we see that the accuracy drops to **52%** and when the compression rate is pushed to **86.2%** we see that the accuracy further drops to **43%** which is still a lot better than a random object classifier that would have an accuracy of 10%.
 
+
+# Summary
+
+1. Depth map based JPEG encoder (d-JPEG) 
+    * Retaining localised details that are deemed to be important by a specific computer vision system.
+    * **84.28%** accuracy on text recognition with an average compression rate of **14.59%**. 
+2. Image Compression for Object Detection
+    * Creates a new compression encoding that retains the abstract features necessary for a computer vision system.
+    * **52%** accuracy on object classification with an average compression rate of **46.2%**.
+
+
+# Conclusion
+
+We have proposed two approaches to compress images that will be consumed by computer vision systems. It is to be noted that even though we have demonstrated our technique with a text recognition system and object detection system, the technique is agnostic to the end system. A similar approach can be used to compress images where the end systems are different from text/object recognition systems.
