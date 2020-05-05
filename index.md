@@ -10,7 +10,7 @@ Our objective is to achieve higher compression in images by retaining only the e
     * Depth map based JPEG encoder (d-JPEG)
     * Image Compression for Object Detection
 
-# Depth map based JPEG encoder (d-JPEG)
+# 1. Depth map based JPEG encoder (d-JPEG)
 
 
 In a previous work, <a href = "https://arxiv.org/pdf/1612.08712.pdf" >Semantic Perceptual Image Compression using Deep Convolution Networks (DCC, 2017)</a>, semantically-salient regions of the image are encoded with higher quality compared to the other regions. We try to extend this idea by using depth map to encode the regions that are closer to the camera with higher quality than the regions that are far away. The intuition for this approach is that the regions that are closer to the camera are likely to be more important for the end object detection system than the regions that are far away.
@@ -19,7 +19,7 @@ The motivation for this approach is that  the depth estimation can be done with 
 
 
 
-## Design (Depth based approach)
+## Design (d-JPEG)
 <img width="331" alt="Screenshot 2020-05-04 at 16 21 04" src="https://user-images.githubusercontent.com/6566518/81014906-576d4580-8e23-11ea-8022-d61eecd1cbfb.png">
 
 
@@ -41,7 +41,7 @@ We reused the image combiner module from  <a href ="https://github.com/iamaadity
 We have tweaked the existing model based on percentile based multi-level threshold in the combiner for our needs to identify the segments in the depth and use the corresponding compressed image segment. 
 
 
-## Evaluation for depth based compression (d-JPEG)
+## Evaluation (d-JPEG)
 
 * **Dataset - <a href="http://vision.ucsd.edu/~kai/svt/ ">Street View Text (SVT)</a> extracted from Google Street View (350 images)** . Text is one of the finer and important detail  that can be present in the image. Our compression method should not lose this information.
 
@@ -82,7 +82,7 @@ This table shows the accuracy based on the EAST's text detection on d-JPEG compr
 
 
 
-# Image Compression for Object Detection
+# 2. Image Compression for Object Detection
 
 In this approach, we take a computer vision system and learn an image compression encoding/decoding specific to it. For instance, given a computer vision system like Inception v3 (a state of the art object detection neural network), the modified image compression scheme should produce a compressed image that is sufficient enough for the Inception v3 to detect objects.
 
@@ -99,7 +99,7 @@ The network proposed by [Toderici et. al.](https://arxiv.org/abs/1608.05148) has
 3. Decoder - Taes the compressed image and reconstructs the original image while retaining the important features.
 
 
-## Design
+## Design (Object detection based Compression)
 
 ![Arch](object-detection-compression/images/arch.png)
 
@@ -127,7 +127,7 @@ The output of this compression scheme that was leanrt using an object detection 
 In the above image we can see that all the images look like gray tiles. For humans, the images may look random and meaningless while for an object detection network like Inception v3 it is easy to classify them info the corresponding obejct classes.
 
 
-## Evaluation
+## Evaluation (Object detection based Compression)
 
 ![Accuracy vs Compression Rate](object-detection-compression/images/accuracy_vs_rate.png)
 
