@@ -6,7 +6,7 @@ Our objective is to achieve higher compression in images by retaining only the e
 # Depth map based JPEG encoder (d-JPEG)
 
 
-In the work Semantic Perceptual Image Compression using Deep Convolution Networks (DCC, 2017), they encode semantically-salient regions of the image with higher quality than the other regions. We try to extend this idea by using depth estimate map of the image. We use Dense depth to get the depth map to encode the regions that are closer to the camera with higher quality than the regions that are far away. The intuition for this approach is that the regions that are closer to the camera are likely to be more important for the end object detection system than the regions that are far away.
+In the work, <a href = "https://arxiv.org/pdf/1612.08712.pdf" >Semantic Perceptual Image Compression using Deep Convolution Networks (DCC, 2017)</a>, they encode semantically-salient regions of the image with higher quality than the other regions. We try to extend this idea by using depth estimate map of the image. We use Dense depth to get the depth map to encode the regions that are closer to the camera with higher quality than the regions that are far away. The intuition for this approach is that the regions that are closer to the camera are likely to be more important for the end object detection system than the regions that are far away.
 
 
 
@@ -25,7 +25,7 @@ The key contribution of this approach are,
 
 
 ### Depth Estimator
-We used the dense depth from High Quality Monocular Depth Estimation via Transfer Learning  - 2018
+We used the dense depth from <a href = "https://github.com/ialhashim/DenseDepth">High Quality Monocular Depth Estimation via Transfer Learning  - 2018</a>
  and model trained on NYU Depth v2 dataset to generate a depth map for the given input image. It uses convolutional neural network (CNN) for computing a high-resolution depth map and the model that we used was trained using NYU Depth v2 dataset.
 
 The input for the module is the original image and the output from this module is the depth map of the image in gray-scale.
@@ -37,14 +37,14 @@ Before using the depth map for the image compression, we wrote an additional lay
 
 ### Image Combiner
 
-We reused the image combiner module from  Semantic Perceptual Image Compression using Deep Convolution Networks (DCC, 2017) with minor modification. The image combiner uses the list of compressed images with varied compression ratio to use that as  segment for various regions in the depth map.
+We reused the image combiner module from  <a href ="https://github.com/iamaaditya/image-compression-cnn">Semantic Perceptual Image Compression using Deep Convolution Networks (DCC, 2017)</a> with minor modification. The image combiner uses the list of compressed images with varied compression ratio to use that as  segment for various regions in the depth map.
 
 We have tweaked the existing model based on percentile based multi-level threshold in the combiner for our needs to identify the segments in the depth and use the corresponding compressed image segment. 
 
 
 ## Evaluation for depth based compression (d-JPEG)
 
-* Dataset - Street View Text (SVT) extracted from Google Street View 
+* **Dataset - <a href="http://vision.ucsd.edu/~kai/svt/ ">Street View Text (SVT)</a> extracted from Google Street View (350 images)** 
 350 images (images containing text in it). Text is one of the finer and important detail  that can be present in the image. Our compression method should not lose this information.
 
 * Computer Vision System - EAST (An Efficient Accurate Scene Text Detector - CVPR ‘17) 
@@ -71,12 +71,12 @@ This table shows the accuracy based on the EAST's text detection on d-JPEG compr
 </table>
 
 <div class="row">
-  <div class="column">
+  <span class="column">
     <img src="https://user-images.githubusercontent.com/6566518/81014677-e9c11980-8e22-11ea-88c4-5737ba195474.png" alt="Snow" style="width:50%">
-  </div>
-  <div class="column">
+  </span>
+  <span class="column">
     <img src="https://user-images.githubusercontent.com/6566518/81014681-ef1e6400-8e22-11ea-9774-8a3f8e39e7f7.png" alt="Forest" style="width:50%">
-  </div>
+  </span>
 
 </div>
 
