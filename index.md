@@ -1,3 +1,10 @@
+In recent years, there has been an exponential increase in the amount of digitally captured images with the advent of high quality cameras in smartphones. There is also an increasing need for finding better image compression techniques that store these images efficiently. Historically, people have tried exploiting the spacial, visual and statistical redundancy in the images for compression while maintaining their visual appeal to humans. With the advancements in autonomous vehicles and computer vision systems, computers have also become an authentic consumer of images.
+
+
+Thus, it forms the motivation behind our project to find compression techniques that retain only the essential information required for the end computer vision system. 
+Image compression for computer vision systems is a topic of research that is slowly gaining traction.
+
+
 Our objective is to achieve higher compression in images by retaining only the essential features that are useful to a given computer vision system. For instance, given a computer vision system like Inception v3 (a state of the art object detection neural network), the modified image compression technique should produce a compressed image that is sufficient enough for the Inception v3 to detect the semantically important objects. We proposed two such approaches -
 
     * Depth map based JPEG encoder (d-JPEG)
