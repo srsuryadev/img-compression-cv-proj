@@ -1,12 +1,12 @@
-Our objective is to achieve higher compression in images by retaining only the essential features that are useful to a given computer vision system. For instance, given a computer vision system like VGG16 (a state of the art object detection neural network), the modified image compression technique should produce a compressed image that is sufficient enough for the VGG16 to detect the semantically important objects. We proposed two such approaches -
+Our objective is to achieve higher compression in images by retaining only the essential features that are useful to a given computer vision system. For instance, given a computer vision system like Inception v3 (a state of the art object detection neural network), the modified image compression technique should produce a compressed image that is sufficient enough for the Inception v3 to detect the semantically important objects. We proposed two such approaches -
 
     * Depth map based JPEG encoder (d-JPEG)
-    * Image Compression for Object Detection (VGG-Compression)
+    * Image Compression for Object Detection
 
 # Depth map based JPEG encoder (d-JPEG)
 
 
-In the work Semantic Perceptual Image Compression using Deep Convolution Networks (DCC, 2017), they encode semantically-salient regions of the image with higher quality than the other regions. We try to extend this idea by using depth estimate map of the image. We use Dense depth \cite{alhashim2018high} to get the depth map to encode the regions that are closer to the camera with higher quality than the regions that are far away. The intuition for this approach is that the regions that are closer to the camera are likely to be more important for the end object detection system than the regions that are far away.
+In the work Semantic Perceptual Image Compression using Deep Convolution Networks (DCC, 2017), they encode semantically-salient regions of the image with higher quality than the other regions. We try to extend this idea by using depth estimate map of the image. We use Dense depth to get the depth map to encode the regions that are closer to the camera with higher quality than the regions that are far away. The intuition for this approach is that the regions that are closer to the camera are likely to be more important for the end object detection system than the regions that are far away.
 
 
 
@@ -79,21 +79,13 @@ This table shows the accuracy based on the EAST's text detection on d-JPEG compr
   </div>
 
 </div>
-<table>
-  <tr>
-    <td>Compressed Image
-</td>
-    <td>Original Image
-</td>
-  </tr>
-  <tr>
-   <td>
-    <img src="https://user-images.githubusercontent.com/6566518/81014677-e9c11980-8e22-11ea-88c4-5737ba195474.png" width=370 height=370></img> </td> <td>
-    <img src="https://user-images.githubusercontent.com/6566518/81014681-ef1e6400-8e22-11ea-9774-8a3f8e39e7f7.png" width=370 height=370></img></td>
-  
-  </tr>
- </table>
- <br><br>
+
+| Compressed Image  |Original Image   |
+|-------------------|-----------------|
+|![Compressed Image](depth-based-compression/images/compressed.png)   |![Original Image](depth-based-compression/images/original.png)   |
+
+
+
  The figures shown in the above table contains the image with maximum savings of 27.57%.
  As you could see from the above table, the EAST is able to detect the text in the compressed image in the same way as the original image. 
 
